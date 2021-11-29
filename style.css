@@ -15,8 +15,8 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 
-input[type="number"] {
-    -moz-appearance: textfield;
+input {
+  text-align: center;
   }
 
 header{
@@ -61,13 +61,9 @@ table{
   font-size: 1.3em;
 }
 
-.row{
-  text-align: center;
-  font-size: 1.5vw;
-}
-
 td{
   padding:1vw;
+  text-align: center;
 }
 
 footer{
