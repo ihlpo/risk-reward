@@ -1,0 +1,110 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #333;
+    background-color: #fbfbfd;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+  }
+
+header{
+  margin-top: 2vw;
+}
+
+header, div.input-area, div.calculations{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+header>p{
+  margin: 1vw 10vw;
+}
+
+.form-field{
+  margin-top: 2vw;
+}
+.form-field>input{
+  width: 25vw;
+  height: 3vw;
+  font-size: 2vw;
+  text-align: center;
+  margin-left: 10vw;
+}
+
+.form-field>select{
+  width: 11vw;
+  height: 2vw;
+  font-size: 1vw;
+  align-self: flex-end;  
+  text-align: center;
+}
+
+table{
+  display: flex;
+  flex-direction: column;
+  margin-top: 2vw;
+  font-size: 1.3em;
+}
+
+.row{
+  text-align: center;
+  font-size: 1.5vw;
+}
+
+td{
+  padding:1vw;
+}
+
+footer{
+  font-size: 0.75vw;
+  margin-top: 1vw;
+}
+
+@media only screen and (max-device-width: 820px){
+
+  header>p{
+    font-size: 0.6em;
+  }
+
+  .form-field>input{
+    width: 70vw;
+    height: 10vw;
+    font-size: 8vw;
+    text-align: center;
+    margin-left: 10vw;
+  }
+
+  .form-field>select{
+    width: 12vw;
+    height: 3vw;
+  }
+
+  .row{
+    font-size: 5vw;
+  }
+  
+  td{
+    padding: 3vw;
+  }
+
+  footer{
+    font-size: 2.5vw;
+  }
+
+}
+
