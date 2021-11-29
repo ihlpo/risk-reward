@@ -1,3 +1,5 @@
+isLong = true;
+
 function currencyFormat(num) {
       return '$' + num.toFixed(2).replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
 };
@@ -78,6 +80,18 @@ function calculate_tax(){
 
 }
 
+function choose_short(){
+   const button1 = document.getElementById('long');
+   button1.style.color = "grey";
+   const button2 = document.getElementById('short');
+   button2.style.color = "red";
+}
 
-document.getElementById("payinput").addEventListener("input", calculate_tax);
-document.getElementById("payfreq").addEventListener("change", calculate_tax);
+function choose_long(){
+   const button1 = document.getElementById('short');
+   button1.style.color = "grey";
+   const button2 = document.getElementById('long');
+   button2.style.color = "green";
+}
+document.getElementById("long").addEventListener("mousedown", choose_long);
+document.getElementById("short").addEventListener("mousedown", choose_short);
