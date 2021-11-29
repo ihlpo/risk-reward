@@ -11,52 +11,41 @@
 <body>
 	<div class="wrapper">
 		<header>
-			<h1> Income Tax Calculator</h1>
+			<h1>Risk Reward Ratio</h1>
 			<p>
-				Use this calculator to quickly find out how much income tax you will need to pay for 2020-2021 finanical year.
-				This calculator conforms to official Australian Tax Office rates. The below rates <b>do not</b> include the 2% Medicare levy.
+				Use this to help calculate your risk reward ratio.
 			</p>
 		</header>
 
+
+
 		<div class="input-area">
-			<div class="form-field">
-				<input type="number" id="payinput" name="pay" placeholder="Salary">
-
-				<select name="payfreq" id="payfreq">
-					<option value="annually">Annually</option>
-					<option value="monthly">Monthly</option>
-					<option value="weekly">Weekly</option>
-				</select>
-			</div>
-
+		<input type="number" placeholder='Entry'>
+		<input type="number" placeholder='Stop'>
+		<input type="number" placeholder='Target'>
+		<div>
+			<button>Long<button>
+			<button>Short</button>
 		</div>
 
 		<div class="calculations">
 			<table>
 				<tr class="row">
-					<td>Weekly Pay</td>
-					<td id="weekly-pay"> - </td>
+					<td>Risk Reward</td>
+					<td id="rrr"> - </td>
+					<td>Exit PnL</td>
+					<td id="exit-pnl"> - </td>
+					<td>Stop PnL</td>
+					<td id="stop-pnl"> - </td>
+				</tr>
+				<!-- <tr class="row">
+					<td>Exit PnL</td>
+					<td id="exit-pnl"> - </td>
 				</tr>
 				<tr class="row">
-					<td>Monthly Pay</td>
-					<td id="monthly-pay"> - </td>
-				</tr>
-				<tr class="row">
-					<td>Annual Pay</td>
-					<td id="annually-pay"> - </td>
-				</tr>
-				<tr class="row">
-					<td>Estimated Tax</td>
-					<td id="taxoutput"> - </td>
-				</tr>
-				<tr class="row">
-					<td>Capital Gains</td>
-					<td id="capitalgains"> - </td>
-				</tr>
-				<tr class="row">
-					<td>Tax Percentage</td>
-					<td id="percent"> - </td>
-				</tr>
+					<td>Stop PnL</td>
+					<td id="stop-pnl"> - </td>
+				</tr> -->
 			</table>
 
 			<footer>
