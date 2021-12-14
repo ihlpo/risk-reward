@@ -33,13 +33,14 @@ function calculate_long(){
    const targetPNLOutput = document.getElementById('target-pnl');
    const stopPNLOutput = document.getElementById('stop-pnl');
 
-   rrr = (targetValue - entryValue) / ((entryValue - stopValue) < 0 ? 1 : entryValue - stopValue);
    targetPNL = (targetValue - entryValue) / entryValue;
    stopPNL = (entryValue - stopValue) / entryValue;
+   rrr = targetPNL > 0 ? targetPNL / stopPNL : (targetPNL / stopPNL) * -1;
 
    rrrOutput.innerHTML = rrr.toFixed(2);
    targetPNLOutput.innerHTML = convert_percentage(targetPNL);
    stopPNLOutput.innerHTML = convert_percentage(stopPNL);
+   
    return;
 }
 
@@ -51,9 +52,9 @@ function calculate_short(){
    const targetPNLOutput = document.getElementById('target-pnl');
    const stopPNLOutput = document.getElementById('stop-pnl');
 
-   rrr = (stopValue - entryValue) / ((entryValue - targetValue) < 0 ? 1 : entryValue - targetValue);
    targetPNL = (entryValue - targetValue) / entryValue;
    stopPNL = (stopValue - entryValue) / entryValue;
+   rrr = targetPNL > 0 ? targetPNL / stopPNL : (targetPNL / stopPNL) * -1;
 
    rrrOutput.innerHTML = rrr.toFixed(2);
    targetPNLOutput.innerHTML = convert_percentage(targetPNL);
