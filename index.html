@@ -23,6 +23,7 @@
 		<input id='entry' type="number" placeholder='Entry'>
 		<input id='target' type="number" placeholder='Target'>
 		<input id='stop' type="number" placeholder='Stop'>
+		<input id='stake' type="number" placeholder='Stake'>
 		<div id="longShortToggle">
 			<button id='long' class='btn btn-success'>Long</button>
 			<button id='short' class='btn btn-danger'>Short</button>
@@ -40,14 +41,16 @@
 					<td>Target PnL</td>
 					<td>Stop PnL</td>
 				</tr>
-				<!-- <tr class="row">
-					<td>Exit PnL</td>
-					<td id="exit-pnl"> - </td>
+			</table>
+			<table>
+				<tr>
+					<td id="profit"> - </td>
+					<td id="loss"> - </td>
 				</tr>
-				<tr class="row">
-					<td>Stop PnL</td>
-					<td id="stop-pnl"> - </td>
-				</tr> -->
+				<tr>
+					<td>Profit</td>
+					<td>Loss</td>
+				</tr>
 			</table>
 
 			<footer>
