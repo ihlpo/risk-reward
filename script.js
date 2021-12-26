@@ -25,6 +25,18 @@ function calculate_rrr(){
 
 }
 
+function calculate_stake(profit, loss){
+   const stakeValue = document.getElementById('stake').value;
+   const profitOutput = document.getElementById('profit');
+   const lossOutput = document.getElementById('loss');
+   
+   profitValue = (stakeValue * profit).toFixed(2);
+   lossValue = (stakeValue * loss).toFixed(2);
+
+   profitOutput.innerHTML = `$${profitValue}`;
+   lossOutput.innerHTML = `$${lossValue}`;
+}
+
 function calculate_long(){
    const entryValue = document.getElementById('entry').value;
    const stopValue = document.getElementById('stop').value;
@@ -33,14 +45,15 @@ function calculate_long(){
    const targetPNLOutput = document.getElementById('target-pnl');
    const stopPNLOutput = document.getElementById('stop-pnl');
 
+   // rrr = (targetValue - entryValue) / ((entryValue - stopValue) < 0 ? 1 : entryValue - stopValue);
    targetPNL = (targetValue - entryValue) / entryValue;
    stopPNL = (entryValue - stopValue) / entryValue;
    rrr = targetPNL > 0 ? targetPNL / stopPNL : (targetPNL / stopPNL) * -1;
-
+   
    rrrOutput.innerHTML = rrr.toFixed(2);
    targetPNLOutput.innerHTML = convert_percentage(targetPNL);
    stopPNLOutput.innerHTML = convert_percentage(stopPNL);
-   
+   calculate_stake(targetPNL, stopPNL);
    return;
 }
 
@@ -52,6 +65,7 @@ function calculate_short(){
    const targetPNLOutput = document.getElementById('target-pnl');
    const stopPNLOutput = document.getElementById('stop-pnl');
 
+   // rrr = (stopValue - entryValue) / ((entryValue - targetValue) < 0 ? 1 : entryValue - targetValue);
    targetPNL = (entryValue - targetValue) / entryValue;
    stopPNL = (stopValue - entryValue) / entryValue;
    rrr = targetPNL > 0 ? targetPNL / stopPNL : (targetPNL / stopPNL) * -1;
@@ -59,7 +73,10 @@ function calculate_short(){
    rrrOutput.innerHTML = rrr.toFixed(2);
    targetPNLOutput.innerHTML = convert_percentage(targetPNL);
    stopPNLOutput.innerHTML = convert_percentage(stopPNL);
+   calculate_stake(targetPNL, stopPNL);
+   return;
 }
+
 document.getElementById("entry").addEventListener("input", calculate_rrr);
 document.getElementById("stop").addEventListener("input", calculate_rrr);
 document.getElementById("target").addEventListener("input", calculate_rrr);
@@ -67,3 +84,4 @@ document.getElementById("long").addEventListener("mousedown", choose_long);
 document.getElementById("long").addEventListener("mousedown", calculate_rrr);
 document.getElementById("short").addEventListener("mousedown", choose_short);
 document.getElementById("short").addEventListener("mousedown", calculate_rrr);
+document.getElementById("stake").addEventListener("input", calculate_rrr);
